@@ -2,7 +2,15 @@ import osmnx as ox
 import folium
 import pandas as pd
 import os
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.append(str(ROOT))
+
 from utils.config import PROCESSED_DATA_DIR, VISUALIZATION_DIR  # ścieżki z config.py
+
 
 # === 1️⃣ Wczytaj dane o natężeniu ruchu ===
 print("📊 Wczytywanie danych o ruchu...")

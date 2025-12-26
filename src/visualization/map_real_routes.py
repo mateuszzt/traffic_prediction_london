@@ -33,8 +33,8 @@ pattern = r"\bA1\b|\bA2\b|\bA3\b|\bA4\b|\bA10\b|\bA12\b|\bA13\b|\bA20\b|\bA23\b|
 # Jeśli kolumna 'ref' istnieje – użyj jej, inaczej fallback do 'name'
 if "ref" in gdf_edges.columns:
     search_column = "ref"
-else:
-    search_column = "name"
+#else:
+#    search_column = "name"
 
 # Spłaszcz wartości listowe w kolumnie 'ref' do stringów
 def flatten_ref(val):

@@ -2,7 +2,8 @@ import torch
 import numpy as np
 import sys
 from pathlib import Path
-from sklearn.metrics import confusion_matrix, classification_report
+from sklearn.metrics import confusion_matrix, classification_report, mean_squared_error, mean_absolute_error
+
 from torch.utils.data import DataLoader, TensorDataset
 ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
@@ -88,9 +89,17 @@ def evaluate():
     y_pred_flat = y_pred.reshape(-1)
     y_true_flat = y_true.reshape(-1)
 
+    # metryki regresyjne
+    mse = mean_squared_error(y_true_flat, y_pred_flat)
+    rmse = np.sqrt(mse)
+    mae = mean_absolute_error(y_true_flat, y_pred_flat)
+
     # dyskretyzacja
     y_pred_cls = to_classes(y_pred_flat)
     y_true_cls = to_classes(y_true_flat)
+
+    
+
 
     print("[6/7] Liczenie metryk")
 
@@ -115,6 +124,12 @@ def evaluate():
 
     print("\nCLASSIFICATION REPORT:")
     print(report)
+
+    print("\nREGRESSION METRICS:")
+    print(f"MSE  = {mse:.4f}")
+    print(f"RMSE = {rmse:.4f}")
+    print(f"MAE  = {mae:.4f}")
+
 
     print("[7/7] Ewaluacja zakończona")
 

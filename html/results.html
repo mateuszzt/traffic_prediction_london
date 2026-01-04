@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Wyniki – Smart City</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">SmartCity</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="data.html">Dane</a></li>
+        <li><a href="model.html">Model</a></li>
+        <li><a href="results.html" class="active">Wyniki</a></li>
+        <li><a href="about.html">O projekcie</a></li>
+    </ul>
+</nav>
+
+<!-- CONTENT -->
+<main class="page-content">
+
+    <h1>Wyniki i ewaluacja</h1>
+
+    <section>
+        <h2>Predykcja ruchu drogowego</h2>
+        <p>
+            Model generuje prognozy natężenia ruchu drogowego
+            na podstawie danych testowych. Predykcje porównywane
+            są z rzeczywistymi wartościami w celu oceny jakości modelu.
+        </p>
+    </section>
+
+    <section>
+        <h2>Wizualizacja wyników</h2>
+        <p>
+            Poniżej prezentowane są wykresy porównujące wartości
+            rzeczywiste z wartościami przewidywanymi przez model.
+        </p>
+        <ul>
+            <li>Rzeczywiste natężenie ruchu</li>
+            <li>Predykcja modelu LSTM</li>
+        </ul>
+
+        <p><em>(Miejsce na wykresy)</em></p>
+    </section>
+
+    <section>
+        <h2>Metryki ewaluacyjne</h2>
+        <p>
+            Jakość modelu oceniana jest przy użyciu metryk
+            odpowiednich dla problemów regresji.
+        </p>
+        <ul>
+            <li>MSE – Mean Squared Error</li>
+            <li>MAE – Mean Absolute Error</li>
+            <li>RMSE – Root Mean Squared Error</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Interpretacja wyników</h2>
+        <p>
+            Otrzymane wyniki pozwalają ocenić zdolność modelu
+            do odwzorowania rzeczywistych zmian natężenia ruchu.
+            Niskie wartości błędów wskazują na dobrą jakość predykcji,
+            natomiast wyższe wartości mogą sugerować konieczność
+            dalszego dostrojenia modelu.
+        </p>
+    </section>
+
+</main>
+
+</body>
+</html>

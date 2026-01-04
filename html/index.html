@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart City – Predykcja Ruchu Drogowego</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">SmartCity</div>
+    <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="data.html">Dane</a></li>
+        <li><a href="model.html">Model</a></li>
+        <li><a href="results.html">Wyniki</a></li>
+        <li><a href="about.html">O projekcie</a></li>
+    </ul>
+</nav>
+
+<!-- HERO / STRONA GŁÓWNA -->
+<header class="hero">
+    <div class="hero-content">
+        <h1>Predykcja Natężenia Ruchu Drogowego</h1>
+        <p>
+            Projekt Smart City wykorzystujący sieci neuronowe LSTM
+            do prognozowania ruchu miejskiego na podstawie danych historycznych.
+        </p>
+        <a href="#simulation" class="hero-button">Uruchom symulację</a>
+    </div>
+</header>
+
+<section id="simulation" class="page-content">
+    <section>
+        <h2>Symulacja predykcji ruchu drogowego</h2>
+
+        <p>
+            Po uruchomieniu symulacji system przedstawia uproszczony
+            przebieg procesu predykcji natężenia ruchu drogowego
+            w oparciu o dane historyczne oraz wytrenowany model LSTM.
+        </p>
+
+<div class="pipeline">
+    <div class="step">Dane historyczne</div>
+    <div class="arrow">→</div>
+    <div class="step">Sekwencje czasowe</div>
+    <div class="arrow">→</div>
+    <div class="step">Model LSTM</div>
+    <div class="arrow">→</div>
+    <div class="step">Predykcja</div>
+</div>
+
+        <p style="margin-top: 16px; font-style: italic; color: #64748b;">
+            Tryb demonstracyjny – miejsce na przyszłą integrację z backendem.
+        </p>
+    </section>
+</section>
+
+</body>
+</html>

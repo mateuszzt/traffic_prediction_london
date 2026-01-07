@@ -1,0 +1,25 @@
+road,status,description,timestamp
+A1,Good,No Exceptional Delays,2025-12-15 21:18:46.065570
+A10,Good,No Exceptional Delays,2025-12-15 21:18:46.065579
+A12,Serious,Serious Delays,2025-12-15 21:18:46.065583
+A13,Good,No Exceptional Delays,2025-12-15 21:18:46.065586
+A2,Good,No Exceptional Delays,2025-12-15 21:18:46.065590
+A20,Good,No Exceptional Delays,2025-12-15 21:18:46.065594
+South Circular (A205),Good,No Exceptional Delays,2025-12-15 21:18:46.065597
+A21,Good,No Exceptional Delays,2025-12-15 21:18:46.065601
+A23,Good,No Exceptional Delays,2025-12-15 21:18:46.065605
+A24,Good,No Exceptional Delays,2025-12-15 21:18:46.065610
+A3,Good,No Exceptional Delays,2025-12-15 21:18:46.065614
+A316,Good,No Exceptional Delays,2025-12-15 21:18:46.065617
+A4,Good,No Exceptional Delays,2025-12-15 21:18:46.065621
+A40,Good,No Exceptional Delays,2025-12-15 21:18:46.065624
+North Circular (A406),Good,No Exceptional Delays,2025-12-15 21:18:46.065628
+A41,Good,No Exceptional Delays,2025-12-15 21:18:46.065631
+Bishopsgate Cross Route,Good,No Exceptional Delays,2025-12-15 21:18:46.065635
+Blackwall Tunnel,Good,No Exceptional Delays,2025-12-15 21:18:46.065638
+City Route,Good,No Exceptional Delays,2025-12-15 21:18:46.065642
+Farringdon Cross Route,Good,No Exceptional Delays,2025-12-15 21:18:46.065645
+Inner Ring,Serious,Serious Delays,2025-12-15 21:18:46.065649
+Silvertown Tunnel,Good,No Exceptional Delays,2025-12-15 21:18:46.065652
+Southern River Route,Good,No Exceptional Delays,2025-12-15 21:18:46.065656
+Western Cross Route,Good,No Exceptional Delays,2025-12-15 21:18:46.065659

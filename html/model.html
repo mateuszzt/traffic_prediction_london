@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Model – Smart City</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">SmartCity</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="data.html">Dane</a></li>
+        <li><a href="model.html" class="active">Model</a></li>
+        <li><a href="results.html">Wyniki</a></li>
+        <li><a href="about.html">O projekcie</a></li>
+    </ul>
+</nav>
+
+<!-- CONTENT -->
+<main class="page-content">
+
+    <h1>Model predykcyjny</h1>
+
+    <section>
+        <h2>Rodzaj problemu</h2>
+        <p>
+            Problem predykcji natężenia ruchu drogowego został sformułowany
+            jako problem regresji. Celem modelu jest przewidywanie
+            wartości liczbowych opisujących poziom ruchu w kolejnych
+            krokach czasowych.
+        </p>
+    </section>
+
+    <section>
+        <h2>Wybrany model</h2>
+        <p>
+            Do realizacji zadania wykorzystano rekurencyjną sieć neuronową
+            typu LSTM (Long Short-Term Memory), która jest szczególnie
+            dobrze przystosowana do analizy danych sekwencyjnych
+            oraz szeregów czasowych.
+        </p>
+    </section>
+
+    <section>
+        <h2>Uzasadnienie wyboru LSTM</h2>
+        <ul>
+            <li>Możliwość modelowania zależności czasowych</li>
+            <li>Odporność na problem zanikającego gradientu</li>
+            <li>Dobra skuteczność w prognozowaniu danych time series</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Architektura modelu</h2>
+        <ul>
+            <li>Warstwa wejściowa – sekwencje danych czasowych</li>
+            <li>Jedna lub więcej warstw LSTM</li>
+            <li>Warstwa gęsta (Dense) generująca predykcję</li>
+        </ul>
+        <p>
+            Na wyjściu model zwraca prognozowaną wartość natężenia ruchu
+            dla kolejnego kroku czasowego lub horyzontu czasowego.
+        </p>
+    </section>
+
+    <section>
+        <h2>Proces uczenia</h2>
+        <p>
+            Model uczony jest na zbiorze treningowym przy użyciu funkcji
+            straty odpowiedniej dla regresji. Proces treningu obejmuje
+            wielokrotne przejścia przez dane uczące oraz aktualizację
+            wag sieci neuronowej.
+        </p>
+    </section>
+
+</main>
+
+</body>
+</html>

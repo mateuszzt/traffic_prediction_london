@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Smart City – Predykcja Ruchu Drogowego</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">SmartCity</div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="data.html">Dane</a></li>
+        <li><a href="model.html">Model</a></li>
+        <li><a href="results.html">Wyniki</a></li>
+        <li><a href="about.html">O projekcie</a></li>
+      </ul>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Predykcja Natężenia Ruchu Drogowego</h1>
+        <p>
+          Projekt Smart City wykorzystujący sieci neuronowe LSTM do
+          prognozowania ruchu miejskiego na podstawie danych historycznych.
+        </p>
+
+        <a href="#mapsSection" id="showMapsBtn" class="hero-button">
+          Wyświetl mapy ruchu
+        </a>
+      </div>
+    </header>
+
+    <section id="mapsSection" style="display: none; margin-top: 40px">
+      <h2>Mapa natężenia ruchu</h2>
+
+      <div class="map-controls" style="margin-bottom: 16px">
+        <button id="btnHistory" class="hero-button active">
+          Dane historyczne
+        </button>
+        <button id="btnForecast" class="hero-button" style="margin-left: 12px">
+          Predykcja
+        </button>
+      </div>
+
+      <div class="time-controls">
+        <input type="range" id="timeSlider" min="0" value="0" />
+        <span id="timeLabel"></span>
+      </div>
+
+      <iframe
+        id="mapFrame"
+        src=""
+        width="100%"
+        height="650"
+        style="border: none; border-radius: 12px"
+        loading="lazy"
+      >
+      </iframe>
+    </section>
+
+    <script>
+      const section = document.getElementById("mapsSection");
+      const frame = document.getElementById("mapFrame");
+      const slider = document.getElementById("timeSlider");
+      const label = document.getElementById("timeLabel");
+
+      const btnHistory = document.getElementById("btnHistory");
+      const btnForecast = document.getElementById("btnForecast");
+
+      let timeline = [];
+      let sliderTimeout = null;
+
+      document.getElementById("showMapsBtn").addEventListener("click", () => {
+        section.style.display = "block";
+        section.scrollIntoView({ behavior: "smooth" });
+      });
+
+      async function loadTimeline(type) {
+        const response = await fetch(`${type}_timeline.json`);
+        timeline = await response.json();
+
+        slider.max = timeline.length - 1;
+        slider.value = 0;
+
+        updateView(0);
+      }
+
+      function updateView(index) {
+        const entry = timeline[index];
+        console.log("Ładuję:", entry);
+        frame.src = entry.file + "?t=" + Date.now();
+        label.textContent = `${entry.date} ${String(entry.hour).padStart(
+          2,
+          "0"
+        )}:00`;
+      }
+
+      slider.addEventListener("input", (e) => {
+        clearTimeout(sliderTimeout);
+        sliderTimeout = setTimeout(() => {
+          updateView(e.target.value);
+        }, 80);
+      });
+
+      btnHistory.addEventListener("click", () => {
+        btnHistory.classList.add("active");
+        btnForecast.classList.remove("active");
+        loadTimeline("map_history");
+      });
+
+      btnForecast.addEventListener("click", () => {
+        btnForecast.classList.add("active");
+        btnHistory.classList.remove("active");
+        loadTimeline("map_forecast");
+      });
+
+      loadTimeline("map_history");
+    </script>
+  </body>
+</html>

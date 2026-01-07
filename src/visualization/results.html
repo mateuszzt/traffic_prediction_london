@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Wyniki – Smart City</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">SmartCity</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="data.html">Dane</a></li>
+        <li><a href="model.html">Model</a></li>
+        <li><a href="results.html" class="active">Wyniki</a></li>
+        <li><a href="about.html">O projekcie</a></li>
+      </ul>
+    </nav>
+
+    <main class="page-content">
+      <h1>Wyniki i ewaluacja</h1>
+
+      <section>
+        <h2>Predykcja ruchu drogowego</h2>
+        <p>
+          Model generuje prognozy natężenia ruchu drogowego na podstawie danych
+          testowych. Predykcje porównywane są z rzeczywistymi wartościami w celu
+          oceny jakości modelu.
+        </p>
+      </section>
+
+      <section>
+        <h2>Wizualizacja wyników</h2>
+        <p>
+          Poniżej zaprezentowano wizualizację wyników ewaluacji modelu
+          predykcyjnego w postaci macierzy pomyłek (confusion matrix), która
+          umożliwia ocenę skuteczności klasyfikacji poziomów natężenia ruchu.
+        </p>
+
+        <div class="chart-container">
+          <img
+            src="cm.png"
+            alt="Macierz pomyłek – Confusion Matrix"
+            style="
+              display: block;
+              margin: 0 auto;
+              max-width: 100%;
+              height: auto;
+            "
+          />
+        </div>
+      </section>
+
+      <section>
+        <h2>Metryki ewaluacyjne</h2>
+        <p>
+          Jakość modelu oceniana jest przy użyciu metryk odpowiednich dla
+          problemów regresji.
+        </p>
+        <ul>
+          <li>MSE – Mean Squared Error = 0.0104</li>
+          <li>MAE – Mean Absolute Error = 0.1018</li>
+          <li>RMSE – Root Mean Squared Error = 0.0194</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Interpretacja wyników</h2>
+        <p>
+          Otrzymane wyniki potwierdzają wysoką skuteczność zaprojektowanego
+          modelu w prognozowaniu natężenia ruchu miejskiego. Model osiągnął
+          bardzo dobrą jakość predykcji, co potwierdzają niskie wartości błędów
+          regresji oraz wysoka dokładność klasyfikacji na poziomie 99%. Macierz
+          pomyłek wskazuje na niemal idealne rozróżnianie klasy good oraz dobrą
+          skuteczność dla klasy serious. Brak próbek klasy severe w zbiorze
+          testowym ogranicza możliwość pełnej oceny tej kategorii, jednak
+          uzyskane rezultaty jednoznacznie potwierdzają zdolność modelu do
+          odwzorowywania rzeczywistych zależności czasowych w danych ruchu
+          miejskiego.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

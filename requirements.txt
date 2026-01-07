@@ -1,0 +1,9 @@
+torch
+pandas
+numpy
+matplotlib
+seaborn
+folium
+osmnx
+geopandas
+scikit-learn

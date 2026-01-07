@@ -1,0 +1,11 @@
+# dane i cache (NIE NA GITHUB)
+data/
+cache/
+src/visualization/cache/
+
+# modele / tensory
+*.pt
+
+# python
+__pycache__/
+*.pyc

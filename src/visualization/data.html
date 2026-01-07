@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Dane – Smart City</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">SmartCity</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="data.html" class="active">Dane</a></li>
+        <li><a href="model.html">Model</a></li>
+        <li><a href="results.html">Wyniki</a></li>
+        <li><a href="about.html">O projekcie</a></li>
+    </ul>
+</nav>
+
+<main class="page-content">
+
+    <h1>Dane wejściowe</h1>
+
+    <section>
+        <h2>Źródło danych</h2>
+        <p>
+            <p>
+            Dane wykorzystane w projekcie pochodzą z publicznie dostępnych
+            źródeł administracji miasta Londyn (Transport for London).
+            Obejmują one historyczne pomiary natężenia ruchu drogowego,
+            informacje czasowe oraz dane lokalizacyjne dla wybranych
+            odcinków sieci drogowej.
+            </p>
+        </p>
+    </section>
+
+    <section>
+        <h2>Charakterystyka danych</h2>
+        <ul>
+            <li>Dane czasowe (time series) opisujące ruch miejski</li>
+            <li>Pomiary zbierane cyklicznie w ustalonych interwałach</li>
+            <li>Status ruchu drogowego oraz znaczniki czasu</li>
+            <li>Dane przypisane do konkretnych odcinków dróg</li>
+</ul>
+
+    </section>
+
+    <section>
+        <h2>Przygotowanie danych</h2>
+        <ul>
+            <li>Czyszczenie danych i usuwanie niepoprawnych rekordów</li>
+            <li>Mapowanie statusów ruchu na wartości liczbowe</li>
+            <li>Generowanie cech czasowych (pora dnia, dzień tygodnia)</li>
+            <li>Kodowanie cykliczne z użyciem funkcji sinus i cosinus</li>
+</ul>
+    </section>
+
+    <section>
+        <h2>Podział danych</h2>
+        <p>
+Dane zostały podzielone czasowo na zbiory treningowe, testowe oraz prognostyczne,
+co pozwoliło na rzetelną ocenę jakości modelu bez przenikania informacji z przyszłości
+do procesu uczenia.
+</p>
+
+<ul>
+  <li>
+    Zbiór treningowy – wykorzystywany do uczenia modelu oraz dostrajania jego parametrów
+    na podstawie danych historycznych.
+  </li>
+  <li>
+    Zbiór testowy – służący do oceny jakości działania wytrenowanego modelu na danych
+    niewidzianych podczas procesu uczenia.
+  </li>
+  <li>
+    Zbiór prognostyczny – przeznaczony do generowania końcowych prognoz natężenia ruchu
+    dla przyszłych przedziałów czasowych.
+  </li>
+</ul>
+
+<p>
+Zastosowany podział danych jest zgodny z charakterem problemu prognozowania szeregów
+czasowych i umożliwia wiarygodną ocenę zdolności modelu do generalizacji.
+</p>

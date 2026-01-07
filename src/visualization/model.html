@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Model – Smart City</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">SmartCity</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="data.html">Dane</a></li>
+        <li><a href="model.html" class="active">Model</a></li>
+        <li><a href="results.html">Wyniki</a></li>
+        <li><a href="about.html">O projekcie</a></li>
+      </ul>
+    </nav>
+
+    <main class="page-content">
+      <h1>Model predykcyjny</h1>
+
+      <section>
+        <h2>Rodzaj problemu</h2>
+        <p>
+          Zadanie prognozowania natężenia ruchu miejskiego zostało sformułowane
+          jako problem regresji sekwencyjnej, polegający na przewidywaniu
+          przyszłych wartości natężenia ruchu na podstawie danych historycznych.
+          Do modelowania zależności czasowych zastosowano rekurencyjną sieć
+          neuronową typu LSTM.
+        </p>
+      </section>
+
+      <section>
+        <h2>Wybrany model</h2>
+        <p>
+          Do realizacji zadania wykorzystano rekurencyjną sieć neuronową typu
+          LSTM (Long Short-Term Memory). Model ten został zaprojektowany do
+          analizy danych sekwencyjnych i umożliwia uczenie się zależności
+          czasowych występujących w danych ruchu miejskiego. Model przyjmuje
+          jako wejście sekwencje historycznych obserwacji i generuje
+          wielokrokową prognozę natężenia ruchu dla kolejnych godzin, co pozwala
+          na przewidywanie przyszłych stanów ruchu drogowego.
+        </p>
+      </section>
+
+      <section>
+        <h2>Uzasadnienie wyboru LSTM</h2>
+
+        <p>Wybór architektury LSTM wynika z jej zdolności do:</p>
+        <ul>
+          <li>
+            efektywnego modelowania długoterminowych zależności czasowych,
+          </li>
+          <li>
+            eliminowania problemu zanikania gradientu, charakterystycznego dla
+            klasycznych RNN,
+          </li>
+          <li>
+            pracy na danych o nieregularnych wzorcach i cyklicznych zmianach.
+          </li>
+        </ul>
+        <p>
+          Natężenie ruchu drogowego wykazuje wyraźne zależności czasowe, takie
+          jak cykle dobowe i tygodniowe, dlatego LSTM stanowi naturalny i
+          uzasadniony wybór dla tego typu problemu prognostycznego.
+        </p>
+      </section>
+
+      <section>
+        <h2>Architektura modelu</h2>
+        <ul>
+          <li>Wejście: sekwencje danych czasowych</li>
+          <li>Dwie warstwy LSTM z mechanizmem dropout</li>
+          <li>Warstwy w pełni połączone generujące prognozę</li>
+        </ul>
+        <p>
+          Model generuje wielokrokową prognozę natężenia ruchu, obejmującą
+          kolejne godziny po zakończeniu sekwencji wejściowej.
+        </p>
+      </section>
+
+      <section>
+        <h2>Proces uczenia</h2>
+        <p>Proces uczenia modelu obejmował kilka etapów:</p>
+
+        <ul>
+          <li>
+            Podział danych na zbiór treningowy, testowy oraz prognostyczny z
+            zachowaniem porządku czasowego.
+          </li>
+          <li>
+            Trenowanie modelu z wykorzystaniem algorytmu Adam jako
+            optymalizatora.
+          </li>
+          <li>
+            Zastosowanie funkcji straty Mean Squared Error (MSE), odpowiedniej
+            dla problemów regresyjnych.
+          </li>
+        </ul>
+
+        <p>
+          Wykorzystanie mechanizmu early stopping, który zapobiega nadmiernemu
+          dopasowaniu modelu do danych treningowych. Uczenie przebiegało
+          iteracyjnie w kolejnych epokach, a najlepszy model był wybierany na
+          podstawie jakości predykcji na zbiorze walidacyjnym. Uczenie modelu
+          realizowane było iteracyjnie z wykorzystaniem funkcji straty MSE oraz
+          optymalizatora Adam. Zastosowano mechanizm wczesnego zatrzymywania
+          (early stopping) w celu ograniczenia nadmiernego dopasowania.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
